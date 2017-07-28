@@ -18,8 +18,8 @@
 		var vm = this;
 		vm.matchedSongs = [];
 		vm.recomdSongs = [];
-		vm.numRecs = 0;
-		vm.frac = 0;
+		vm.numRecs = 20;
+		vm.frac = 25;
 		vm.selectedSongID = '';
 		vm.queryBySong = queryBySong;
 		vm.queryRecom = queryRecom;
@@ -47,9 +47,9 @@
 			var selectedArtistID = '';
 			for (var i = 0; i < vm.matchedSongs.length; i++) {
 
-				if (vm.matchedSongs[i].songID === songID) {
+				if (vm.matchedSongs[i].songId === songID) {
 					console.log('here');
-					selectedArtistID = vm.matchedSongs[i].artistID;
+					selectedArtistID = vm.matchedSongs[i].artistId;
 					break;
 				}
 			}

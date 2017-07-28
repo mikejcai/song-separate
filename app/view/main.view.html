@@ -34,14 +34,14 @@
             <div class="row">
               <div class="col-xs-12 col-md-10 col-md-offset-1 configurations">
                 <!-- sliders start -->
-                <h4><i class="fa fa-sliders" aria-hidden="true"></i> Param 1 (numRecs)</h4>
+                <h4><i class="fa fa-sliders" aria-hidden="true"></i> Number of Recommendations</h4>
                 <md-slider-container>
                   <md-slider flex ng-model="main.numRecs" step="1" min="0" max="100" aria-label="numRecs"></md-slider class="md-accent">
                   <md-input-container>
                     <input flex type="number" ng-model="main.numRecs" aria-label="numRecs" aria-controls="numRecs-slider">
                   </md-input-container>
                 </md-slider-container>
-                <h4><i class="fa fa-sliders" aria-hidden="true"></i> Param 2 (frac)</h4>
+                <h4><i class="fa fa-sliders" aria-hidden="true"></i> Fraction of Recommendations from the Same Artist</h4>
                 <md-slider-container>
                   <md-slider flex ng-model="main.frac" step="1" min="0" max="100" aria-label="frac"></md-slider class="md-accent">
                   <md-input-container>
@@ -57,8 +57,8 @@
                 <h4>Select matched song</h4>
                 <div>
                   <md-radio-group ng-model="main.selectedSongID" required>
-                    <md-list-item ng-repeat="i in main.matchedSongs track by i.songID" md-ink-ripple="rgba(255,255,255,0.3)">
-                      <md-radio-button class="md-accent" ng-value="i.songID"><span class="song">{{i.songName}}</span> by <span class="artist">{{i.artistName}}</span></md-radio-button>
+                    <md-list-item ng-repeat="i in main.matchedSongs track by i.songId" md-ink-ripple="rgba(255,255,255,0.3)">
+                      <md-radio-button class="md-accent" ng-value="i.songId"><span class="song">{{i.songName}}</span> by <span class="artist">{{i.artistName}}</span></md-radio-button>
                       <!-- <p>{{i.name}}</p> -->
                     </md-list-item>
                   </md-radio-group>    

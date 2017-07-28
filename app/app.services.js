@@ -22,8 +22,8 @@
 		============================================*/
 		
 		function getSongMatches (song, artist) {
-			// var query_url = 'http://10.11.255.204:9010/SongSelection?song_name=' + song + '&artist_name=' + artist;
-			var query_url = 'api/query1.json';
+			var query_url = 'http://10.2.62.101:9010/SongSelection?song_name=' + song + '&artist_name=' + artist;
+			//var query_url = 'api/query1.json';
 			
 			return $http.get(query_url)
 						.then(function(results) {
@@ -34,15 +34,15 @@
 		}
 
 		function getRecommendedSongs (refSongId, refArtistId, numRecSongs, frac) {
-			// var query_url = 'http://10.11.255.204:9010/SongRecommendation?song_key=' + refSongId 
-			// 	+ '&artist_key=' + refArtistId 
-			// 	+ '&num_recs=' + numRecSongs 
-			// 	+ '&num_same_artist=' + Math.floor(pctSameArtist*numRecSongs/100)
+			var query_url = 'http://10.2.62.101:9010/SongRecommendation?song_key=' + refSongId 
+			 	+ '&artist_key=' + refArtistId 
+			 	+ '&num_recs=' + numRecSongs 
+			 	+ '&num_same_artist=' + Math.floor(frac*numRecSongs/100)
 			// 	+ '&sim_artist_param=' + simArtistParam
 			// 	+ '&user_name=' + userName 
 			// 	+ '&sim_user_param=' + simUserParam;
 
-			var query_url = 'api/query2.json';
+			//var query_url = 'api/query2.json';
 
 			return $http.get(query_url)
 						.then(function(results) {
